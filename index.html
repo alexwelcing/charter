@@ -1,0 +1,96 @@
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/table.css"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="outr_states">
+						<select id="states" data-step="1" data-intro="Select state"><option value="">Select State</option><option value="Alabama" disabled="" style="color: red">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York" disabled="" style="color: red">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option></select>
+						<div class="icons-box"> 
+							<span data-step="3" data-intro="Click to show hide map" class="my_toggle"><i class="fa fa-globe"></i>Map</span>
+							<span data-step="3" data-intro="Click to show hide map" class="my_toggle"><i class="fa fa-line-chart"></i>Chart</span>
+						</div>     
+					</div>
+<div class="category-btn">
+  <ul>
+     <li data-id="1"><div class="cat-btn"><label class="active">Fee Service Reimbursement</label><input type="checkbox" name="vehicle1" value="Bike"></div></li>
+     <li data-id="2"><div class="cat-btn"><label>Fee Service Duplicate Discount </label><input type="checkbox" name="vehicle1" value="Bike"></div></li>
+     <li data-id="3"><div class="cat-btn"><label>Managed Care Reimbursement </label><input type="checkbox" name="vehicle1" value="Bike"></div></li>
+     <li data-id="4"><div class="cat-btn"><label>Managed Care Duplicate Discount </label><input type="checkbox" name="vehicle1" value="Bike"></div></li>
+    <!-- <li><div class="cat-btn more-btn"><label>More</label><input type="checkbox" name="vehicle1" value="Bike"></div></li>-->
+  </ul>
+</div>
+<div class="sub-cat" id="active-tab">
+  <ul>
+     <li><div class="cat-btn"><input type="checkbox" name="vehicle1" value="Bike"></div><label class="active">covered entities for 340-B</label></li>
+     <li><div class="cat-btn"><input type="checkbox" name="vehicle1" value="Bike"><label>contract pharmacies for 340-B drugs </label></div></li>
+     <li><div class="cat-btn"><input type="checkbox" name="vehicle1" value="Bike"><label>covered entities for non-340-B drugs </label></div></li>
+     <li><div class="cat-btn"><input type="checkbox" name="vehicle1" value="Bike"><label>contract pharmacies for non-340-B drugs</label></div></li>
+  </ul>
+</div>
+
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>States</th>
+                <th>FIC</th>
+                <th>FDF</th>
+                <th>FCD</th>
+                <th>MIC</th>
+                <th>MDR</th>
+                <th>MCD</th>
+                <th>FDA</th>
+                <th>MDA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>AL</td>
+                <td>System Architect</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>2011/04/25</td>
+                <td>$320,800</td>
+                <td>$320,800</td>
+                <td>$320,800</td>
+                <td>$320,800</td>
+            </tr>
+            <tr>
+                <td>AZ</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>63</td>
+                <td>2011/07/25</td>
+                <td>$170,750</td>
+                <td>$170,750</td>
+                <td>$170,750</td>
+                <td>$170,750</td>
+            </tr>
+			<tr>
+                <td>AR</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>63</td>
+                <td>63</td>
+                <td>63</td>
+                <td>2011/07/25</td>
+                <td>$170,750</td>
+                <td>$170,750</td>
+            </tr>
+			
+        </tbody>
+    </table>
+	<div class="abb">
+	    <h5>Abbrevations:</h5>
+		<ul>
+		   <li><strong>FIC:</strong>Fee-for -service Delivery System: Ingredient Cost</li>
+		   <li><strong>FDF:</strong>Fee-for -service Delivery System:  Dispensing Fee</li>
+		   <li><strong>FCD:</strong>Fee-for -service Delivery System: Clarifying Details</li>
+		   <li><strong>MIC:</strong>Managed Care Delivery System : Ingredient Cost</li>
+		   <li><strong>MDR:</strong>Managed Care Delivery System : Dispensing Fee</li>
+		   <li><strong>MCD:</strong>Managed Care Delivery System :  Clarifying Details
+</li>
+		</ul>
+	</div>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="js/dataTables.jqueryui.min.js"></script>
+	<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
