@@ -1,5 +1,5 @@
 table.dataTable thead th {
-    background: #77c398;
+    background: #cde5d9;
 }
 #example_length, #example_filter {
     padding: 22px 15px;
@@ -9,6 +9,7 @@ table.dataTable thead th {
 }
 #example_info, #example_paginate {
     margin: 23px 0 0;
+    color: #4a4a4a;
 }
 #example_paginate a.paginate_button.current {
     background: #77c398 !important;
@@ -47,7 +48,7 @@ a#example_previous:hover {
 }
 .category-btn ul li label {
     /* background: #ececec; */
-    font-size: 15px;
+    font-size: 17px;
     padding: 9px;
     cursor: pointer;
     /* border-radius: 4px; */
@@ -132,6 +133,7 @@ div#example_wrapper {
     display: inline-block;
     width: 100%;
     margin: 7px 0;
+    color: #4a4a4a;
 }
 
 .abb ul li strong {
@@ -161,8 +163,8 @@ select#states {
     color: #000;
     font-size: 18px !important;
     background: #77c398;
-    color: #000;
-    border-radius: 4px;
+    color: fff;
+    /* border-radius: 4px; */
     font-family: Georgia, Times, "Times New Roman", serif !important;
     margin-right: 10px;
 }
@@ -188,4 +190,84 @@ select#states {
 }
 #active-tab4:before {
     right: 18px !important;
+}
+/******checkbx-design******/
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 19px;
+  width: 19px;
+  background-color:transparent;
+  border:1px solid #ccc;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color:transparent
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #77c398;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 0;
+  top: 5px;
+  right: 0;
+  width: 2px;
+  margin: auto;
+  height: 6px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.sub-cat label {
+    font-size: 17px;
+    margin: 5px 0;
+}
+table.dataTable thead th {
+    background-image: url(../img/arrow.png);
+    background-repeat: no-repeat;
+    background-position: 84% 57%;
 }

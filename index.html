@@ -3,94 +3,126 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="outr_states">
-						<select id="states" data-step="1" data-intro="Select state"><option value="">Select State</option><option value="Alabama" disabled="" style="color: red">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York" disabled="" style="color: red">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option></select>
-						<div class="icons-box">
-							<span data-step="3" data-intro="Click to show hide map" class="my_toggle"><i class="fa fa-globe"></i>Map</span>
-							<span data-step="3" data-intro="Click to show hide map" class="my_toggle"><i class="fa fa-line-chart"></i>Chart</span>
-						</div>
-					</div>
+	<select id="states" data-step="1" data-intro="Select state"><option value="">Select State</option><option value="Alabama" disabled="" style="color: red">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York" disabled="" style="color: red">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option></select>
+	<div class="icons-box"> 
+		<span data-step="3" data-intro="Click to show hide map" class="my_toggle"><i class="fa fa-globe"></i>Map</span>
+		<span data-step="3" data-intro="Click to show hide map" class="my_toggle"><i class="fa fa-line-chart"></i>Chart</span>
+	</div>     
+</div>
 <div class="category-btn">
-  <ul>
-     <li data-id="1"><div class="cat-btn"><label class="active">Fee Service Reimbursement</label><input type="checkbox" name="vehicle1" value="Bike"></div></li>
-     <li data-id="2"><div class="cat-btn"><label>Fee Service Duplicate Discount </label><input type="checkbox" name="vehicle1" value="Bike"></div></li>
-     <li data-id="3"><div class="cat-btn"><label>Managed Care Reimbursement </label><input type="checkbox" name="vehicle1" value="Bike"></div></li>
-     <li data-id="4"><div class="cat-btn"><label>Managed Care Duplicate Discount </label><input type="checkbox" name="vehicle1" value="Bike"></div></li>
-    <!-- <li><div class="cat-btn more-btn"><label>More</label><input type="checkbox" name="vehicle1" value="Bike"></div></li>-->
-  </ul>
+	<ul>
+		<li data-id="1">
+			<div class="cat-btn">
+				<label class="active" for="fee_service_reimburse">Fee Service Reimbursement</label>
+				<input type="checkbox" class="cat default-cat" name="cat" value="fee_service_reimburse" id="fee_service_reimburse" checked>
+			</div>
+		</li>
+		<li data-id="2">
+			<div class="cat-btn">
+				<label for="fee_service_duplicate">Fee Service Duplicate Discount </label>
+				<input type="checkbox"  class="cat" name="cat" value="fee_service_duplicate" id="fee_service_duplicate" >
+			</div>
+		</li>
+		<li data-id="3">
+			<div class="cat-btn">
+				<label  for="managed_service_reimburse">Managed Care Reimbursement </label>
+				<input type="checkbox" name="cat" class="cat"  value="managed_service_reimburse" id="managed_service_reimburse" >
+			</div>
+		</li>
+		<li data-id="4">
+			<div class="cat-btn">
+				<label  for="managed_service_duplicate">Managed Care Duplicate Discount </label>
+				<input type="checkbox" class="cat" name="cat" value="managed_service_duplicate" id="managed_service_duplicate" >
+			</div>
+		</li>
+		<!-- <li><div class="cat-btn more-btn"><label>More</label><input type="checkbox" name="vehicle1" value="Bike"></div></li>-->
+	</ul>
 </div>
 <div class="sub-cat" id="active-tab">
-  <ul>
-     <li><div class="cat-btn"><input type="checkbox" name="vehicle1" value="Bike"></div><label class="active">covered entities for 340-B</label></li>
-     <li><div class="cat-btn"><input type="checkbox" name="vehicle1" value="Bike"><label>contract pharmacies for 340-B drugs </label></div></li>
-     <li><div class="cat-btn"><input type="checkbox" name="vehicle1" value="Bike"><label>covered entities for non-340-B drugs </label></div></li>
-     <li><div class="cat-btn"><input type="checkbox" name="vehicle1" value="Bike"><label>contract pharmacies for non-340-B drugs</label></div></li>
-  </ul>
+	<ul>
+	<div class="service_reimburse">
+		<li>
+			<div class="cat-btn">
+				<label class="container">Covered entities for 340-B
+					<input type="checkbox" class="subcat defaultsub-cat" name="sub-cat" value="covered_entities_340-B" checked>
+					<span class="checkmark"></span>
+				</label>
+			</div>
+		</li>
+		<li>
+			<div class="cat-btn">
+				<label class="container">Contract pharmacies for 340-B
+					<input type="checkbox"  class="subcat" name="sub-cat" value="contract_pharmacies_340-B" >
+					<span class="checkmark"></span>
+				</label>
+			</div>
+		</li>
+		<li>
+			<div class="cat-btn">
+				<label class="container">Covered entities for non-340-B drugs
+					<input type="checkbox"  class="subcat" name="sub-cat" value="covered_entities_non-B" >
+					<span class="checkmark"></span>
+				</label>
+			</div>
+		</li>
+		<li>
+			<div class="cat-btn">
+				<label class="container">Contract pharmacies for non-340-B drugs
+					<input type="checkbox"  class="subcat" name="sub-cat" value="contract_pharmacies_non-B" >
+				<span class="checkmark"></span></label>
+			</div>
+		</li>
+		</div>
+		<div class="service_duplicate" style="display:none;">
+		<li>
+			<div class="cat-btn">
+				<label class="container">Covered entities
+					<input type="checkbox"  class="subcat2 defaultsub-cat" name="subcat2" value="covered_entities" checked>
+					<span class="checkmark"></span>
+				</label>
+			</div>
+		</li>
+		<li>
+			<div class="cat-btn">
+				<label class="container">Contract pharmacies
+					<input type="checkbox" class="subcat2" name="subcat2" value="contract_pharmacies" >
+					<span class="checkmark"></span></label>
+			</div>
+		</li>
+		<div>
+	</ul>
 </div>
 
 <table id="example" class="display" style="width:100%">
-        <thead>
-            <tr>
-                <th>States</th>
-                <th>FIC</th>
-                <th>FDF</th>
-                <th>FCD</th>
-                <th>MIC</th>
-                <th>MDR</th>
-                <th>MCD</th>
-                <th>FDA</th>
-                <th>MDA</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>AL</td>
-                <td>For eligible 340B entities listed on the U.S. Department of Health and Human Services Health Resources & Service Administration (HRSA) 340B Drug Pricing Program Database, payment shall not exceed the entity's actual acquisition cost for the drug, as charged by the manufacturer at a price consistent with the Veterans Health Care Act of 1992, plus a professional dispensing fee of $10.64.</td>
-                <td>$10.64</td>
-                <td>When an eligible 340B entity, other than a disproportionate share hospital, a children's hospital excluded from the Medicare prospective payment system, a free-standing cancer hospital exempt from the Medicare prospective payment system, sole community hospital, rural referral center, or critical access hospital, submits a bill to the Medicaid Agency for a drug purchased by or on behalf of a Medicaid recipient, the amount billed shall not exceed the entity's actual acquisition cost for the drug, as charged by the manufacturer at a price consistent with the Veterans Health Care Act of 1992, plus the dispensing fee established by the Medicaid Agency. A disproportionate share hospital, children's hospital excluded from the Medicare prospective payment system, free-standing cancer hospital exempt from the Medicare prospective payment system, sole community hospital, rural referral center, or critical access hospital may bill Medicaid the total charges for the drug. As manufacturer price changes occur, the entities must ensure that their billings are updated accordingly.</td>
-                <td>N/A. Alabama Medicaid is Fee For Service, with no MCOs.</td>
-                <td>N/A. Alabama Medicaid is Fee For Service, with no MCOs.</td>
-                <td>$320,800</td>
-                <td>$320,800</td>
-                <td>$320,800</td>
-            </tr>
-            <tr>
-                <td>AZ</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>63</td>
-                <td>2011/07/25</td>
-                <td>$170,750</td>
-                <td>$170,750</td>
-                <td>$170,750</td>
-                <td>$170,750</td>
-            </tr>
-			<tr>
-                <td>AR</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>63</td>
-                <td>63</td>
-                <td>63</td>
-                <td>2011/07/25</td>
-                <td>$170,750</td>
-                <td>$170,750</td>
-            </tr>
+	<thead>
+		<tr>
+			<th>States</th>
+			<th>FFS IC</th>
+			<th>FFS DF</th>
+			<th>FFS Info</th>
+			<th>MCO IC</th>
+			<th>MCO DF</th>
+			<th>MCO Info</th>
+			<th>MCD</th>
+			
+		</tr>
+	</thead>
+	
+</table>
+<div class="abb">
+	<h5>Abbrevations:</h5>
+	<ul>
+		<li><strong>FFS IC:</strong>Fee-for -service Delivery System: Ingredient Cost</li>
+		<li><strong>FFS DF:</strong>Fee-for -service Delivery System:  Dispensing Fee</li>
+		<li><strong>FFS Info:</strong>Fee-for -service Delivery System: Clarifying Details</li>
+		<li><strong>MCO IC:</strong>Managed Care Delivery System : Ingredient Cost</li>
+		<li><strong>MCO DF:</strong>Managed Care Delivery System : Dispensing Fee</li>
+		<li><strong>MCO Info:</strong>Managed Care Delivery System :  Clarifying Details
+		</li>
+	</ul>
+</div>
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/dataTables.jqueryui.min.js"></script>
 
-        </tbody>
-    </table>
-	<div class="abb">
-	    <h5>Abbrevations:</h5>
-		<ul>
-		   <li><strong>FIC:</strong>Fee-for -service Delivery System: Ingredient Cost</li>
-		   <li><strong>FDF:</strong>Fee-for -service Delivery System:  Dispensing Fee</li>
-		   <li><strong>FCD:</strong>Fee-for -service Delivery System: Clarifying Details</li>
-		   <li><strong>MIC:</strong>Managed Care Delivery System : Ingredient Cost</li>
-		   <li><strong>MDR:</strong>Managed Care Delivery System : Dispensing Fee</li>
-		   <li><strong>MCD:</strong>Managed Care Delivery System :  Clarifying Details
-</li>
-		</ul>
-	</div>
-		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-	<script type="text/javascript" src="js/dataTables.jqueryui.min.js"></script>
-	<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
