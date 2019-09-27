@@ -1,8 +1,12 @@
+body {
+    background: #f4f4f6 !important;
+}
 table.dataTable thead th {
     background: #cde5d9;
 }
 #example_length, #example_filter {
     padding: 22px 15px;
+    /* width: 200px; */
 }
 #example td:first-child {
     border-left: 1px solid #ebebeb;
@@ -29,7 +33,7 @@ a#example_previous:hover {
     color: #fff !important;
 }
 #example_length select {
-    height: 30px;
+    /* height: 30px; */
     margin: 0 5px;
     border: 2px solid #77c398;
     border-radius: 3px;
@@ -78,11 +82,10 @@ a#example_next:hover {
 }
 body {
     padding: 30px;
-    background: #f4f4f6;
 }
 .sub-cat ul li {
     display: inline-block;
-    width: 43%;
+    width: 49%;
     margin: 6px 0;
 }
 .sub-cat ul li input {
@@ -95,7 +98,7 @@ body {
     width: 60%;
     padding: 8px 15px;
     position: relative;
-    margin: 20px auto;
+    margin: 40px auto 0;
 }
 .cat-btn {
     display: inline-block;
@@ -103,9 +106,9 @@ body {
 .sub-cat ul {
     padding: 0;
 }
-.sub-cat:before {content: "";width: 0;height: 0;border-left: 25px solid transparent;border-right: 25px solid transparent;border-bottom: 25px solid #ffffff;position: absolute;top: -16px;}
+.sub-cat:before {width: 0;height: 0;border-left: 25px solid transparent;border-right: 25px solid transparent;border-bottom: 25px solid #ffffff;position: absolute;top: -16px;}
 div#example_wrapper {
-    margin: 54px 0 0;
+    /* margin: 54px 0 0; */
 }
 .dataTables_wrapper .dataTables_filter input {
     border: none;
@@ -128,7 +131,9 @@ div#example_wrapper {
     transform: translateY(-50%);
     right: 0;
 }
-
+td {
+    vertical-align: text-bottom;
+}
 .abb ul li {
     display: inline-block;
     width: 100%;
@@ -270,4 +275,149 @@ table.dataTable thead th {
     background-image: url(../img/arrow.png);
     background-repeat: no-repeat;
     background-position: 84% 57%;
+}
+div#example_length {
+    display: none;
+}
+div#example_filter input {
+    border: 1px solid #77c398;
+}
+.sub-cat label {
+    padding: 0 36px;
+    font-size: 15px;
+}
+span.DataTables_sort_icon.css_right.ui-icon.ui-icon-triangle-1-n {
+    display: none;
+}
+td.sorting_1:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.container .checkmark:after {
+    left: 0;
+    top: 5px;
+    right: 0;
+    width: 5px;
+    margin: auto;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+a.more_text {
+    color: #41ad70 !important;
+    margin: 10px 0 3px;
+    display: block;
+}
+.full_text p {
+    position: absolute;
+    display: none;
+    background: #fff;
+    width: 500px;
+    z-index: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 4px 0px #827a79e0;
+	top:100%;
+}
+
+a.more_text {
+    color: green !important;
+    margin-left: 5px;
+}
+.full_text a.more_text span:after {
+    content: "+";
+}
+.full_text{display:inline-block;}
+.full_text.less_text p{display:block}
+.full_text.less_text a span:after{content:"-"}
+ table#example td{position:relative;}
+ a.more_text span {
+    color: green;
+    width: 12px;
+    text-align: center;
+    display: inline-block;
+}
+/******res********/
+@media screen and (max-width:767px){
+.icons-box {
+    margin: 28px 0 0;
+}
+select#states {
+    width: 100%;
+}
+.category-btn ul {
+    margin: 20px 0 !important;
+}
+.category-btn ul li {
+    margin: 12px 0;
+}
+.sub-cat:before {
+    display: none;
+}
+.sub-cat {
+    width: 100%;
+    box-sizing: border-box;
+}
+.sub-cat ul li {
+    width: 100%;
+}
+#example_wrapper {
+    margin: 0 !important;
+    overflow-x: scroll;
+}
+.abb {
+    margin: 28px 0 0;
+}
+.abb h5:before {
+    display: none;
+}
+.abb ul li {
+    font-size: 14px;
+}
+#example_length, #example_filter {
+    padding: 15px;
+    margin: 0;
+}
+.category-btn ul {
+    padding: 0;
+}
+.category-btn ul li label {
+    font-size: 15px;
+}
+.sub-cat label {
+    font-size: 15px;
+}
+table.dataTable thead th {
+    background-position: right;
+}
+}
+@media screen and (min-width:767px) and (max-width:940px){
+#example_wrapper {
+    overflow-x: scroll;
+    margin-bottom: 38px;
+}
+.sub-cat ul li {
+    width: 100%;
+}
+}
+@media screen and (min-width:767px) and (max-width:1200px){
+.category-btn ul li {
+    margin: 0 0 25px;
+}
+.sub-cat:before{
+	display:none;
+}
+.category-btn ul li label {
+    font-size: 15px;
+}
+.sub-cat label {
+    font-size: 15px;
+    margin: 5px 0;
+}
+table.dataTable, table.dataTable th, table.dataTable td {
+    font-size: 14px;
+}
 }
