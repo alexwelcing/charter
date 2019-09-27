@@ -4,14 +4,14 @@
 <link href="css/340b.css" rel="stylesheet" />
 
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-	
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="outr_states">
 	<select id="states" data-step="1" data-intro="Select state"></select>
-	<div class="icons-box"> 
+	<div class="icons-box">
 		<span data-step="3" class="my_toggle map_click"><i class="fa fa-globe"></i>Map</span>
 		<span data-step="3" class="my_toggle chart_click"><i class="fa fa-line-chart"></i>Chart</span>
-	</div>     
+	</div>
 </div>
 <div class="map_container">
 		<div class="jsmaps-wrapper-box"><div data-step="2" data-intro="Click on state" class="jsmaps-wrapper" id="usaTerritories-map"></div></div>
@@ -49,7 +49,7 @@
 				<input type="checkbox" class="cat" name="cat" value="managed_service_duplicate" id="managed_service_duplicate" >
 			</div>
 		</li>
-		
+
 	</ul>
 </div-->
 <div class="sub-cat" id="active-tab">
@@ -103,30 +103,30 @@
 			<th>MCO DF</th>
 			<th>MCO Info</th>
 			<th>MCO DDM</th>
-			
+
 		</tr>
 	</thead>
-	
+
 	</table>
 	<div class="abb">
 		<h5>Abbrevations:</h5>
 		<ul>
-			<li><strong>FFS IC:</strong>Fee-for -service Delivery System: Ingredient Cost</li>
-			<li><strong>FFS DF:</strong>Fee-for -service Delivery System:  Dispensing Fee</li>
-			<li><strong>FFS Info:</strong>Fee-for -service Delivery System: Clarifying Details</li>
-			<li><strong>FFS DDM:</strong>Fee-for -service Delivery System : Duplicate Discount Mechanism (Answer)</li>
-			<li><strong>MCO DF:</strong>Managed Care Delivery System : Dispensing Fee</li>
-			<li><strong>MCO Info:</strong>Managed Care Delivery System :  Clarifying Details</li>
-			<li><strong>MCO DDM:</strong>Managed Care Delivery System :  Duplicate Discount Mechanism (Answer)</li>
+			<li><strong>FFS IC:</strong>Fee-for -service: Ingredient Cost</li>
+			<li><strong>FFS DF:</strong>Fee-for -service:  Dispensing Fee</li>
+			<li><strong>FFS Info:</strong>Fee-for -service: Clarifying Details</li>
+			<li><strong>FFS DDM:</strong>Fee-for -service: Duplicate Discount Mechanism (Answer)</li>
+			<li><strong>MCO DF:</strong>Managed Care: Dispensing Fee</li>
+			<li><strong>MCO Info:</strong>Managed Care:  Clarifying Details</li>
+			<li><strong>MCO DDM:</strong>Managed Care:  Duplicate Discount Mechanism (Answer)</li>
 		</ul>
 	</div>
 </div>
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="js/dataTables.jqueryui.min.js"></script>
-<script src="js/jsmaps-libs.js" type="text/javascript"></script>		
+<script src="js/jsmaps-libs.js" type="text/javascript"></script>
 <script src="js/jsmaps.min.js" type="text/javascript"></script>
-		
+
 <script type="text/javascript" src="js/usaTerritories.js" ></script>
 <script type="text/javascript" src="js/340bmap.js"></script>
 
@@ -135,13 +135,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
 
-<script>		
+<script>
 			var value,introJ='',step=false;
-			
+
 			//map-->
 			jQuery('#usaTerritories-map').JSMaps({
 				map: 'usaTerritories',
-				mapWidth: 800, 
+				mapWidth: 800,
 				mapHeight: 600,
 				stateClickAction : "none",
 				onStateClick : function(res) {
@@ -149,56 +149,55 @@
 						introJ.goToStep(3).start().previousStep();
 						step=false;
 					}
-					checkJson(res.name);					
-					var abbri = res.abbreviation;					
+					checkJson(res.name);
+					var abbri = res.abbreviation;
 					var dataLayer = window.dataLayer = window.dataLayer || [];
 					dataLayer.push({'event': 'ClickonMap'});
-					({'event': '5Sec Event'}); 
+					({'event': '5Sec Event'});
 					({'event':'Track UserID','userID': '2'});
-					
+
 				}
 			});
-			
+
 			//map toggle
-			
+
 			jQuery(document).on('change', '#states', function(){
 				var val = jQuery(this).val();
 				checkJson(val);
 			});
-			
+
 			jQuery('body').on('click', 'a[href*="#"]', function(e) {
 				jQuery('.active_source').removeClass('active_source');
 				var stck = jQuery(this).attr('href');
 				jQuery(stck).addClass('active_source');
-				
-				
+
+
 			});
-			
+
 			//maptoggle
 			jQuery(document).ready(function(){
-				
+
 				jQuery(".map_click").click(function(){
 					jQuery(".state_container").hide();
 					jQuery(".chart_container").hide();
 					jQuery(".map_container").show();
 				});
-				
+
 				jQuery(".chart_click").click(function(){
 					jQuery(".state_container").hide();
 					jQuery(".chart_container").show();
 					jQuery(".map_container").hide();
 				});
-				
-		
+
+
 				jQuery('body').on('click', '.sorting_1', function(e) {
 					var val = jQuery(this).text();
 					console.log(val);
 					checkJson(val);
-					
+
 				});
-				
-				
-				
+
+
+
 			});
 		</script>
-		
