@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\.netlify",
     "\\css",
-    "\\js"
+    "\\img",
+    "\\json"
   ],
-  "SelectedNode": "\\js\\datatables.jqueryui.min.js",
+  "SelectedNode": "\\json\\sectiondata.json",
   "PreviewInSolutionExplorer": false
 }

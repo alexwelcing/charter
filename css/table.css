@@ -1337,7 +1337,7 @@ table.dataTable tfoot th {
 }
 table.dataTable thead th,
 table.dataTable thead td {
-  padding: 12px 18px;
+  padding: 5px;
   /* border-right: 1px solid #ccc; */
   /* border-top: 1px solid #ccc; */
   /* border-bottom: 1px solid #ccc; */
@@ -1362,11 +1362,15 @@ table.dataTable tbody tr.selected {
 }
 table.dataTable tbody th,
 table.dataTable tbody td {
-  padding: 12px 15px;
+  padding: 5px;
   background: transparent;
   border-right: 1px solid #ebebeb;
   color: #4a4a4a;
 }
+th.sorting.ui-state-default {
+    padding: 15px;
+}
+
 table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td {
   border-top: 1px solid #ebebeb;
 }

@@ -71,19 +71,21 @@ jQuery.fn.dataTable.render.ellipsis = function ( cutoff, wordbreak, escapeHtml )
 		if ( d.length <= cutoff ) {
 			return d;
 		}
+		
+		var p = $('<p>'+d+'</p>').text();
 
-		var shortened = d.substr(0, cutoff-1);
+		var shortened = p.substr(0, cutoff-1);
 
 		// Find the last white space character in the string
-		if ( wordbreak ) {
+		 if ( wordbreak ) {
 			shortened = shortened.replace(/\s([^\s]*)$/, '');
-		}
-
+		} 
+		
 		// Protect against uncontrolled HTML input
 		if ( escapeHtml ) {
 			shortened = esc( shortened );
 		}
 
-		return '<span class="ellipsis">'+shortened+'</span><div class="full_text"><a href="" class="more_text">[<span></span>]</a><p>'+esc(d)+'</p></div>';
+		return '<span class="ellipsis">'+shortened+'</span><div class="full_text"><a href="" class="more_text">[<span></span>]</a><div class="textdetails">'+d+'</div></div>';
 	};
 };

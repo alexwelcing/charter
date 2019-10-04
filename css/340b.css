@@ -222,9 +222,6 @@ span.my_togglee {
     height: 2160px !important;
     left: -150px;
 
-}
- select {
-    display:block !important;
 }   	
 .intro-c {
     display: inline-block;
@@ -519,6 +516,8 @@ select#states:focus, .select#states:active, .select#states:hover {
 }
 table#example th, table#example td {
     border-right: 1px solid rgba(0,0,0,.12);
+    font-family: 'Arial' !important;
+    font-size: 14px;
 }
 .table-responsive tr td:first-child {
     font-weight: 600 !important;
@@ -740,7 +739,7 @@ select#states {
 }
 .outr_states {
     width: 700px;
-    margin: 38px auto 0 !important;
+    margin: 0px auto 0 !important;
 }
 
 /*11 sepy 2018*/

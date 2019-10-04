@@ -33,15 +33,15 @@ function _getStateData () {
 		}).then(function(json) {
 		chatData = json;
 		
+		 delivery_system = $(".delivery_system:checkbox:checked").map(function(){
+			  return $(this).val();
+			}).get(); 
+			
 		 services = $(".service:checkbox:checked").map(function(){
 			  return $(this).val();
 			}).get(); 
 			
 		subcat = $(".subcat:checkbox:checked").map(function(){
-			  return $(this).val();
-			}).get(); 
-			
-		delivery_system = $(".delivery_system:checkbox:checked").map(function(){
 			  return $(this).val();
 			}).get(); 
 				
@@ -60,51 +60,40 @@ var removeElements = function(text, selector) {
     return wrapped.html();
 }
 
-function chartData(value){
-	console.log(value);
-	jQuery.each( value.service, function( catKey, catvalue ) {				
-				
-				chartArray['state'] = value.state;				
-				jQuery.each( catvalue[subcat], function( subcatKey, subcatvalue ) {						
-                     var catvalue1 = $('<p>'+subcatvalue+'</p>').text();
-					
-						 if(subcatKey != 'que'){
-							chartArray[subcatKey] = subcatvalue;
-							}
-							//if(jQuery.inArray(subcatKey, services) !== -1){							
-								//	chartArray[subcatKey] = subcatvalue;
-							//}
-						
-					});
-			});
-}
 
-function _chartDataBind(chatData,subcat,services){
+
+function _chartDataBind(chatData,subcat,services,delivery_system){
 	var mainarray = [];
 	var mainarray1 = [];
 	
 	var i = 1;
+	
+	console.log(delivery_system);
+	console.log(subcat);
+	console.log(services);
 	
 	// states loop
 	
 
 	jQuery.each( chatData, function( key, value ) {				
 		
-			// category loop	
-			//cat = 'fee_service_duplicate';
-			 
+		if (delivery_system && delivery_system.length > 0) {
 		
-		
-		if (selectedState && selectedState.length > 0) {				
-				if(jQuery.inArray(value.state, selectedState) !== -1){	
-					chartArray = {};
-					jQuery.each( value.service, function( catKey, catvalue ) {	
-							chartArray['state'] = value.state;
+			if(jQuery.inArray(value.state, selectedState) !== -1){
+			console.log('select states');
+				
+			}else{
+				chartArray = {};
+				
+				//jQuery.each( value.service, function( catKey, catvalue ) {	
+						jQuery.each( delivery_system, function( dsKey, dsVal ) {
+						
+							jQuery.each( value.service[dsVal], function( sKey, svalue ) {
+								console.log(svalue);
 							jQuery.each( subcat, function( ca, su ) {
 							
-							//console.log(catvalue[su]);
-
-							jQuery.each( catvalue[su], function( subcatKey, subcatvalue ) {					
+							jQuery.each( svalue[su], function( subcatKey, subcatvalue ) {	
+											
 								 var catvalue1 = $('<p>'+subcatvalue+'</p>').text();					
 									 if(subcatKey != 'que'){
 										chartArray[subcatKey+'_'+ca] = subcatvalue;
@@ -112,53 +101,35 @@ function _chartDataBind(chatData,subcat,services){
 								});	
 								
 							});
-					});
-					mainarray.push(chartArray);
-				}
-				
-		}else{
-			chartArray = {};
-			
-				jQuery.each( value.service, function( catKey, catvalue ) {	
-					chartArray['state'] = value.state;
+							
+							});
+						});
+						mainarray.push(chartArray);
 					
-					jQuery.each( subcat, function( ca, su ) {
-						
-						jQuery.each( catvalue[su], function( subcatKey, subcatvalue ) {						
-						 var catvalue1 = $('<p>'+subcatvalue+'</p>').text();					
-							 if(subcatKey != 'que'){
-							chartArray[subcatKey+'_'+ca] = subcatvalue;
-								}						
-						});	
-						
-					});	
-				//mainarray1.push(chartArray);
-			});
-			mainarray.push(chartArray);
+			//});
+			}		
+		
+		}else{
+			console.log('select delivery system');
 		}
-		
-			
-		
-		
+		return false;
 		i++;
 	});
 
-var column = {};
 
-	jQuery.each( delivery_system, function( k, v ) {
-		if(v=='f'){		
-				jQuery.each( services, function( ks, vs ) {
-					column[v+vs] = v+vs;
-				});
-			
-			}else{			
-				jQuery.each( services, function( ks, vs ) {
-					column[v+vs] = v+vs;
-				});							
-			}			
-	});
+		//console.log(mainarray);
 		
-	
+		
+	var column = {
+		"fic":"FFS IC",
+		"fdf":"FFS DF",
+		"fcd":"FFS Info",
+		"fdd":"FFS DDM",
+		"mic":"MCO IC",
+		"mdf":"MCO DF",
+		"mcd":"MCO Info",
+		"mdd":"MCO DDM"};
+		
 	var head = {
 		"covered_entities_340-B":"CE 340B",
 		"contract_pharmacies_340-B":"CP 340B",
@@ -170,13 +141,13 @@ var column = {};
 	data.push({ "data" : "state","defaultContent": "-","visible": true ,"title":"States", "width": "100px" });
 
 	jQuery.each( column, function( ke, val ) {		
-
-		/* if(jQuery.inArray(ke, services) !== -1){
+	
+		if(jQuery.inArray(ke, services) !== -1){
 			var visible = true;		
 		}else{
 			var visible = false;
-		} */
-		var visible = true;	
+		}
+		
 		jQuery.each( subcat, function( ca, su ) {
 			var heading = head[su];
 		
@@ -185,11 +156,8 @@ var column = {};
 					
 	});
 	
-		console.log(data);
-//console.log(subcat);
-console.log(services);
-console.log(column);
-//console.log(mainarray);
+	
+console.log(data);
 
 	$('#example').DataTable().clear();
 	$('#example').DataTable().destroy();
@@ -198,7 +166,9 @@ console.log(column);
 		"lengthMenu": [[60, 120, 180, -1], [60, 120, 180, "All"]],
         "data": mainarray,
 		"columns" : data,
-		
+		"columnDefs": [
+			  { "width": "50px", "targets": 0 },
+			],
     } ); 
 //	table.columns.adjust().draw();
 	
@@ -212,8 +182,6 @@ jQuery(document).on('change', '#statesMulti', function(){
 				
 });
 	
-	
-
 $('.delivery_system').change(function() {
 	event.preventDefault();
 	
@@ -222,7 +190,6 @@ $('.delivery_system').change(function() {
     }).get(); 
    _chartDataBind(chatData,subcat,services,delivery_system); 
 });	
-
 
 $('.service').change(function() {
 	event.preventDefault();

@@ -4,16 +4,17 @@
 <link href="css/340b.css" rel="stylesheet" />
 
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-
+<link rel="stylesheet" href="css/selectize.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="outr_states">
+	<select id="statesMulti" data-step="1" data-intro="Select state" placeholder="Select state" multiple="multiple" style="display: none;"></select>
 	<select id="states" data-step="1" data-intro="Select state"></select>
-	<div class="icons-box">
+	<div class="icons-box"> 
 		<span data-step="3" class="my_toggle map_click"><i class="fa fa-globe"></i>Map</span>
 		<span data-step="3" class="my_toggle chart_click"><i class="fa fa-line-chart"></i>Chart</span>
-	</div>
+	</div>     
 </div>
-<div class="map_container">
+<div class="map_container" >
 		<div class="jsmaps-wrapper-box"><div data-step="2" data-intro="Click on state" class="jsmaps-wrapper" id="usaTerritories-map"></div></div>
 </div>
 <div class="state_container" style="display:none;">
@@ -23,42 +24,48 @@
 </div>
 
 <div class="chart_container" style="display:none;">
-	<!--div class="category-btn">
-	<ul>
-		<li data-id="1">
-			<div class="cat-btn">
-				<label class="active" for="fee_service_reimburse">Fee Service Reimbursement</label>
-				<input type="checkbox" class="cat default-cat" name="cat" value="fee_service_reimburse" id="fee_service_reimburse" checked>
-			</div>
-		</li>
-		<li data-id="2">
-			<div class="cat-btn">
-				<label for="fee_service_duplicate">Fee Service Duplicate Discount </label>
-				<input type="checkbox"  class="cat" name="cat" value="fee_service_duplicate" id="fee_service_duplicate" >
-			</div>
-		</li>
-		<li data-id="3">
-			<div class="cat-btn">
-				<label  for="managed_service_reimburse">Managed Care Reimbursement </label>
-				<input type="checkbox" name="cat" class="cat"  value="managed_service_reimburse" id="managed_service_reimburse" >
-			</div>
-		</li>
-		<li data-id="4">
-			<div class="cat-btn">
-				<label  for="managed_service_duplicate">Managed Care Duplicate Discount </label>
-				<input type="checkbox" class="cat" name="cat" value="managed_service_duplicate" id="managed_service_duplicate" >
-			</div>
-		</li>
-
-	</ul>
-</div-->
+	
 <div class="sub-cat" id="active-tab">
-	<ul>
-	<div class="service_reimburse">
+	<div class="reimbursement"><div class="service_reimburse filterBox">
+		<div class="label-heading catheading">Medicaid Reimbursement for Drugs 
+			<span class="expand fa"></span>		
+		</div>
+		 <div class="medi-outr filterSec">
+		  <h4 class="cat-titl">Delivery System</h4>
+	   <ul>
+		<li>
+			<div class="cat-btn">
+				<label class="container"> 
+					Fee-for -service
+					<input type="checkbox" class="delivery_system defaultsub-ds" name="delivery_system[]" value="f" checked>
+					<span class="checkmark"></span>
+				</label>
+			</div>
+		</li>
+		<li>
+			<div class="cat-btn">
+				<label class="container"> 
+					Managed Care
+					<input type="checkbox" class="delivery_system defaultsub-cat" name="delivery_system[]" value="m" >
+					<span class="checkmark"></span>
+				</label>
+			</div>
+		</li>
+	  </ul>
+	</div>
+	</div>
+	
+	
+	<div class="service_reimburse filterBox">
+	<div class="label-heading catheading">Type of Entity/Type of Drugs
+		<span class="expand fa"></span>		
+	</div>
+	  <div class="medi-outr filterSec">
+	  <ul>
 		<li>
 			<div class="cat-btn">
 				<label class="container">Covered entities for 340-B
-					<input type="checkbox" class="subcat defaultsub-cat" name="sub-cat" value="covered_entities_340-B" checked>
+					<input type="checkbox" class="subcat defaultsub-cat" name="sub-cat[]" value="covered_entities_340-B" checked>
 					<span class="checkmark"></span>
 				</label>
 			</div>
@@ -66,7 +73,7 @@
 		<li>
 			<div class="cat-btn">
 				<label class="container">Contract pharmacies for 340-B
-					<input type="checkbox"  class="subcat" name="sub-cat" value="contract_pharmacies_340-B" >
+					<input type="checkbox"  class="subcat" name="sub-cat[]" value="contract_pharmacies_340-B" >
 					<span class="checkmark"></span>
 				</label>
 			</div>
@@ -74,7 +81,7 @@
 		<li>
 			<div class="cat-btn">
 				<label class="container">Covered entities for non-340-B drugs
-					<input type="checkbox"  class="subcat" name="sub-cat" data-value="" value="covered_entities_non-340-B" >
+					<input type="checkbox"  class="subcat" name="sub-cat[]" data-value="" value="covered_entities_non-340-B" >
 					<span class="checkmark"></span>
 				</label>
 			</div>
@@ -82,18 +89,115 @@
 		<li>
 			<div class="cat-btn">
 				<label class="container">Contract pharmacies for non-340-B drugs
-					<input type="checkbox"  class="subcat" name="sub-cat" value="contract_pharmacies_non-340-B" >
+					<input type="checkbox"  class="subcat" name="sub-cat[]" value="contract_pharmacies_non-340-B" >
 				<span class="checkmark"></span></label>
 			</div>
 		</li>
+			</ul>
 		</div>
-
-	</ul>
+</div>
+	<div class="service_reimburse drugs filterBox">
+	<ul>
+	<div class="label-heading subheading">Information Requested:
+		<span class="expand fa"></span>		
+	</div>
+	<div class="cat-outr filterSec">
+	<div class="cat-one">
+	    
+		<ul>
+			<li>
+	        <div class="cat-btn">
+				<label class="container">Ingredient Cost
+					<input type="checkbox"  class="service" name="service[]" value="ic" data-value="1" checked>
+					<span class="checkmark"></span>
+				</label>
+			</div>
+	</li>
+	<li>
+			<div class="cat-btn">
+				<label class="container">Dispensing Fee
+					<input type="checkbox"  class="service" name="service[]" value="df"  data-value="2" checked>
+					<span class="checkmark"></span>
+				</label>
+			</div>
+	
+	</li>
+	<li>
+	    <div class="cat-btn">
+				<label class="container">Clarifying Details
+					<input type="checkbox"  class="service" name="service[]" value="cd"  data-value="3" checked >
+					<span class="checkmark"></span>
+				</label>
+		</div>
+	</li>
+		</ul>
+	</div>
+	
+	
+</div>
+</div>
 </div>
 
+	<div class="duplicate">
+	<div class="service_reimburse filterBox">
+		<div class="label-heading catheading">Mechanism for Prevention of Duplicate Discount
+			<span class="expand fa"></span>		
+		</div>
+		 <div class="medi-outr filterSec">
+		  <h4 class="cat-titl">Delivery System</h4>
+	  <ul>
+		<li>
+			<div class="cat-btn">
+				<label class="container"> 
+					Fee-for -service
+					<input type="checkbox" class="subcat defaultsub-cat" name="delivery_system[]" value="FFS" >
+					<span class="checkmark"></span>
+				</label>
+			</div>
+		</li>
+		<li>
+			<div class="cat-btn">
+				<label class="container"> 
+					Managed Care
+					<input type="checkbox" class="subcat defaultsub-cat" name="delivery_system[]" value="MCO" >
+					<span class="checkmark"></span>
+				</label>
+			</div>
+		</li>
+	  </ul>
+	</div>
+	
+		 <div class="medi-outr filterSec">
+		  <h4 class="cat-titl">Type of Entity</h4>
+	  <ul>
+		<li>
+			<div class="cat-btn">
+				<label class="container"> 
+					Covered Entity
+					<input type="checkbox" class="subcat" name="service[]" value="covered_entities" >
+					<span class="checkmark"></span>
+				</label>
+			</div>
+		</li>
+		<li>
+			<div class="cat-btn">
+				<label class="container"> 
+					Contract Pharmacy
+					<input type="checkbox" class="subcat" name="service[]" value="contract_pharmacies" >
+					<span class="checkmark"></span>
+				</label>
+			</div>
+		</li>
+	  </ul>
+	</div>
+		
+	</div>	
+	</div>
+	</div>
 <table id="example" class="display" style="width:100%">
 	<thead>
 		<tr>
+		
 			<th>States</th>
 			<th>FFS IC</th>
 			<th>FFS DF</th>
@@ -103,30 +207,30 @@
 			<th>MCO DF</th>
 			<th>MCO Info</th>
 			<th>MCO DDM</th>
-
+			
 		</tr>
 	</thead>
-
+	
 	</table>
 	<div class="abb">
 		<h5>Abbrevations:</h5>
 		<ul>
-			<li><strong>FFS IC:</strong>Fee-for -service: Ingredient Cost</li>
-			<li><strong>FFS DF:</strong>Fee-for -service:  Dispensing Fee</li>
-			<li><strong>FFS Info:</strong>Fee-for -service: Clarifying Details</li>
-			<li><strong>FFS DDM:</strong>Fee-for -service: Duplicate Discount Mechanism (Answer)</li>
-			<li><strong>MCO DF:</strong>Managed Care: Dispensing Fee</li>
-			<li><strong>MCO Info:</strong>Managed Care:  Clarifying Details</li>
-			<li><strong>MCO DDM:</strong>Managed Care:  Duplicate Discount Mechanism (Answer)</li>
+			<li><strong>FFS IC:</strong>Fee-for -service Delivery System: Ingredient Cost</li>
+			<li><strong>FFS DF:</strong>Fee-for -service Delivery System:  Dispensing Fee</li>
+			<li><strong>FFS Info:</strong>Fee-for -service Delivery System: Clarifying Details</li>
+			<li><strong>FFS DDM:</strong>Fee-for -service Delivery System : Duplicate Discount Mechanism (Answer)</li>
+			<li><strong>MCO DF:</strong>Managed Care Delivery System : Dispensing Fee</li>
+			<li><strong>MCO Info:</strong>Managed Care Delivery System :  Clarifying Details</li>
+			<li><strong>MCO DDM:</strong>Managed Care Delivery System :  Duplicate Discount Mechanism (Answer)</li>
 		</ul>
 	</div>
 </div>
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="js/dataTables.jqueryui.min.js"></script>
-<script src="js/jsmaps-libs.js" type="text/javascript"></script>
+<script src="js/jsmaps-libs.js" type="text/javascript"></script>		
 <script src="js/jsmaps.min.js" type="text/javascript"></script>
-
+<script src="js/selectize.js"></script>		
 <script type="text/javascript" src="js/usaTerritories.js" ></script>
 <script type="text/javascript" src="js/340bmap.js"></script>
 
@@ -135,13 +239,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
 
-<script>
+<script>		
 			var value,introJ='',step=false;
-
+			
 			//map-->
 			jQuery('#usaTerritories-map').JSMaps({
 				map: 'usaTerritories',
-				mapWidth: 800,
+				mapWidth: 800, 
 				mapHeight: 600,
 				stateClickAction : "none",
 				onStateClick : function(res) {
@@ -149,55 +253,68 @@
 						introJ.goToStep(3).start().previousStep();
 						step=false;
 					}
-					checkJson(res.name);
-					var abbri = res.abbreviation;
+					checkJson(res.name);					
+					var abbri = res.abbreviation;					
 					var dataLayer = window.dataLayer = window.dataLayer || [];
 					dataLayer.push({'event': 'ClickonMap'});
-					({'event': '5Sec Event'});
+					({'event': '5Sec Event'}); 
 					({'event':'Track UserID','userID': '2'});
-
+					
 				}
 			});
-
+			
 			//map toggle
-
+			
 			jQuery(document).on('change', '#states', function(){
 				var val = jQuery(this).val();
 				checkJson(val);
 			});
-
+			
 			jQuery('body').on('click', 'a[href*="#"]', function(e) {
 				jQuery('.active_source').removeClass('active_source');
 				var stck = jQuery(this).attr('href');
 				jQuery(stck).addClass('active_source');
-
-
+				
+				
 			});
-
+			
 			//maptoggle
 			jQuery(document).ready(function(){
-
+				
 				jQuery(".map_click").click(function(){
 					jQuery(".state_container").hide();
 					jQuery(".chart_container").hide();
+					jQuery("#statesMulti").hide();
 					jQuery(".map_container").show();
+					jQuery("#states").show();
+					jQuery(".selectize-control.multi").hide();
 				});
-
+				
 				jQuery(".chart_click").click(function(){
 					jQuery(".state_container").hide();
-					jQuery(".chart_container").show();
+					jQuery(".chart_container").show();					
 					jQuery(".map_container").hide();
+					jQuery("#statesMulti").show();
+					jQuery("#states").hide();
+					jQuery(".selectize-control.multi").show();
 				});
-
-
+				
+		
 				jQuery('body').on('click', '.sorting_1', function(e) {
 					var val = jQuery(this).text();
 					console.log(val);
 					checkJson(val);
-
+					
 				});
-
-
-
+				
+				
+				
 			});
+			//drug toggle
+jQuery(".label-heading").click(function(){
+	
+  jQuery(this).parents('.filterBox').toggleClass('active');  
+});
+
 		</script>
+		

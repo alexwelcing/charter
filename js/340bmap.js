@@ -19,18 +19,32 @@ function loadAjax(file){
 	});	
 }
 
-
+var STATESMulti = [];
 function showData(data, status, xhr) {
 	if(data.length){
 	    switch(current){
 	        case '340bstates.json':
 			STATES.length = 0;
 			STATES.push('<option value="">Select State</option>');
-			for (var i = 0; i < data.length; i++) {
-				createStates(data[i]);		
+			for (var i = 0; i < data.length; i++) {				
+				createStates(data[i]);	
+				STATESMulti.push({"id": data[i].name, "title": data[i].name});
 			}
+			
 			jQuery('#states').html(STATES);
+			
+			jQuery('#statesMulti').selectize({
+					maxItems: null,
+					valueField: 'id',
+					labelField: 'title',
+					searchField: 'title',
+					options: STATESMulti,
+					create: false
+				});
+			 
 			loadAjax('sectiondata.json');
+		
+		
         	break;
             case 'sectiondata.json':
 			//console.log(data);
@@ -71,6 +85,9 @@ function checkJson(abb){
 		jQuery(".state_container").show();
 		jQuery(".chart_container").hide();
 		jQuery(".map_container").hide();
+		jQuery("#statesMulti").hide();
+		jQuery("#states").show();
+		jQuery(".selectize-control.multi").hide();
 		
     $("html, body").animate({ scrollTop: 0 }, "slow");
    
