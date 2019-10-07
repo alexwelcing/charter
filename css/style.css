@@ -9,7 +9,7 @@ table.dataTable thead th {
     /* width: 200px; */
 }
 .dropdown.bootstrap-select.show-tick{
-	 display:none; 
+	 display:none;
 }
 .label-heading.catheading {
     /* padding: 15px; */
@@ -31,7 +31,7 @@ table.dataTable thead tr th:first-child, table.dataTable tbody tr td:first-child
 	font-size: 14px;
     font-family: Arial;
     text-transform: uppercase;
-	
+
 }
 #example td:first-child {
     border-left: 1px solid #ebebeb;
@@ -42,7 +42,7 @@ table#example th {
 }
 .reimbursement {
     background: #fff;
-}	
+}
 #example_info, #example_paginate {
     margin: 23px 0 0;
     color: #4a4a4a;
@@ -72,7 +72,7 @@ a#example_previous:hover {
 }
 .dataTables_wrapper .dataTables_filter input {
     height: 30px;
-} 
+}
 .category-btn ul li {
     display: inline-block;
     padding: 5px 8px;
@@ -191,7 +191,7 @@ select#states {
     font-size: 15px;
     color: #000;
     border-radius: 0px;
-    font-family: Georgia, Times, "Times New Roman", serif;
+    font-family: "Arial";
     padding: 0 6px;
     background: transparent;
 }
@@ -203,7 +203,7 @@ select#states {
     background: #77c398;
     color: fff;
     /* border-radius: 4px; */
-    font-family: Georgia, Times, "Times New Roman", serif !important;
+    font-family: "Arial";
     margin-right: 10px;
 }
 .outr_states {
@@ -435,7 +435,7 @@ h4.cat-titl {
 .service_reimburse.drugs ul li label {
     padding: 0  24px;
 }
-.cat-outr.main {   
+.cat-outr.main {
     margin: 10px 0 0;
 }
 .expand{
@@ -479,7 +479,7 @@ span.add, span.minus {
 }
 
 .medi-outr{
-	
+
 margin: 3px 0 0;
 }
 
