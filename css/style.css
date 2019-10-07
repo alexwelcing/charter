@@ -8,12 +8,41 @@ table.dataTable thead th {
     padding: 3px 15px;
     /* width: 200px; */
 }
+.dropdown.bootstrap-select.show-tick{
+	 display:none; 
+}
+.label-heading.catheading {
+    /* padding: 15px; */
+}
+.duplicate.filterBox {
+    background: #fff;
+   FONT-WEIGHT: 100;
+padding: 10px 14px;
+}
+table.dataTable thead tr th:first-child, table.dataTable tbody tr td:first-child {
+    /* max-width: 100px !important; */
+    /* display: inline-block; */
+       min-width: 53px !important;
+    width: 54px !important;
+	    text-align: center;
+		padding: 6px;
+}
+.DataTables_sort_wrapper{
+	font-size: 14px;
+    font-family: Arial;
+    text-transform: uppercase;
+	
+}
 #example td:first-child {
     border-left: 1px solid #ebebeb;
 }
 table#example th {
     text-transform: uppercase;
+	min-width: 169px;
 }
+.reimbursement {
+    background: #fff;
+}	
 #example_info, #example_paginate {
     margin: 23px 0 0;
     color: #4a4a4a;
@@ -354,11 +383,14 @@ select#statesMulti {
     display: none !important;
 }
 .service_reimburse {
-    margin: 0 0 20px;
     background: #fff;
+    padding: 0 15px 0px;
+}
+.reimbursement {
+    margin: 0 0 20px;
     padding: 10px 15px;
 }
-.service_reimburse .label-heading.catheading {
+.label-heading.catheading {
     margin-bottom: 0;
     font-weight: 600;
     font-family: 'Arial' !important;
@@ -397,7 +429,7 @@ select#statesMulti {
 }
 h4.cat-titl {
     font-size: 13px;
-    margin: 13px 0 6px;
+    margin: 7px 0 6px;
     font-weight: 600;
 }
 .service_reimburse.drugs ul li label {
@@ -407,9 +439,9 @@ h4.cat-titl {
     margin: 10px 0 0;
 }
 .expand{
-	position:relative;
+	/* position:relative; */
 	width: 100%;
-    display: block;
+	display: block;
 }
 .expand:before {
     content: "\f106";
@@ -427,10 +459,10 @@ h4.cat-titl {
     font-weight: 600;
     transform: translateY(-50%);
 }
-.filterSec{
+.service_reimburse{
 	 display: block;
 }
-.active .filterSec{
+.active .service_reimburse{
 	 display: none;
 }
 
@@ -448,7 +480,7 @@ span.add, span.minus {
 
 .medi-outr{
 	
-	margin: 10px 0 0;
+margin: 3px 0 0;
 }
 
 .selectize-control.multi .selectize-input [data-value] {
@@ -505,6 +537,34 @@ span.add, span.minus {
 }
 .showToggle{
 	display:block;
+}
+button.btn.dropdown-toggle.bs-placeholder.btn-light{
+    height: 40px !important;
+    background: #fff;
+    border-radius: 0;
+    color: 3000;
+}
+.bootstrap-select .dropdown-toggle .filter-option {
+	 height: 40px !important;
+    border-radius: 0;
+    color: 3000;
+	border: 1px solid #77c398;
+}
+select#states {
+    margin: 0 12px  0 19px;
+}
+.dropdown-menu.show {
+    top: 70% !important;
+    height: 300px !important;
+}
+button.btn.dropdown-toggle.btn-light {
+    height: 40px;
+}
+select#states,.icons-box {
+    margin: 0 0 0 12px !important;
+}
+.medi-outr h4.cat-titl {
+    font-size: 16px;
 }
 /******res********/
 @media screen and (max-width:767px){

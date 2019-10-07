@@ -28,20 +28,14 @@ function showData(data, status, xhr) {
 			STATES.push('<option value="">Select State</option>');
 			for (var i = 0; i < data.length; i++) {				
 				createStates(data[i]);	
-				STATESMulti.push({"id": data[i].name, "title": data[i].name});
+				//STATESMulti.push({"id": data[i].name, "title": data[i].name});
 			}
 			
 			jQuery('#states').html(STATES);
+			jQuery('#statesMulti').html(STATESMulti);
+			jQuery('#statesMulti').selectpicker('refresh');;
 			
-			jQuery('#statesMulti').selectize({
-					maxItems: null,
-					valueField: 'id',
-					labelField: 'title',
-					searchField: 'title',
-					options: STATESMulti,
-					create: false
-				});
-			 
+			
 			loadAjax('sectiondata.json');
 		
 		
@@ -63,6 +57,7 @@ function createStates(arr) {
     html = '<option value="'+arr.name+'" disabled style="color: red">'+arr.name+'</option>';
    }
     STATES.push(html); 
+    STATESMulti.push(html); 
 }
 
 
@@ -87,7 +82,7 @@ function checkJson(abb){
 		jQuery(".map_container").hide();
 		jQuery("#statesMulti").hide();
 		jQuery("#states").show();
-		jQuery(".selectize-control.multi").hide();
+		jQuery(".bootstrap-select.show-tick").hide();
 		
     $("html, body").animate({ scrollTop: 0 }, "slow");
    

@@ -131,10 +131,10 @@ function _chartDataBind(chatData,subcat,services,delivery_system){
 		"mdd":"MCO DDM"};
 		
 	var head = {
-		"covered_entities_340-B":"CE 340B",
-		"contract_pharmacies_340-B":"CP 340B",
-		"covered_entities_non-340-B":"CE N-340B",
-		"contract_pharmacies_non-340-B":"CP N-340B"
+		"covered_entities_340B":"CE 340B",
+		"contract_pharmacies_340B":"CP 340B",
+		"covered_entities_non-340B":"CE N-340B",
+		"contract_pharmacies_non-340B":"CP N-340B"
 	};
 	//var column_heading = ["FFS IC","FFS DF","FFS Info","FFS DDM","MCO IC","MCO DF","MCO Info","MCO DDM"];
 	var data = [];
