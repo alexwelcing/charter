@@ -78,7 +78,15 @@ var headers = {};
 		"covered_entities":"CDD",
 		"contract_pharmacies":"CDD",
 	};
-
+var drugs = {
+		"fic":"FFS Ingredient Cost",
+		"fdf":"FFS Dispensing Fee",
+		"fcd":"FFS Clarifying Details",
+		"mic":"MCO Ingredient Cost",
+		"mdf":"MCO Dispensing Fee",
+		"mcd":"MCO Clarifying Details",
+	};
+	
 	jQuery.each( delivery_system, function( k, v ) {
 		if(v=='f'){
 			jQuery.each( services, function( ks, vs ) {
@@ -166,9 +174,12 @@ if(columnLenght>6){
 	jQuery.each( headers, function( ke, val ) {
 		var heading = head[val];
 		var drugName = ke.split("_");
-		data.push({ "data" : ke,"defaultContent": "-","visible": true ,"title":heading+' '+drugName[0]})
+		var system = val.replace('_',' ');
+		var system = system.replace('_',' ');
+		var heads = '<label data-title="'+system+' '+drugs[drugName[0]]+'">'+heading+' '+drugName[0]+'</label>';
+		data.push({ "data" : ke,"defaultContent": "-","visible": true ,"title":heads})
 	});
-
+console.log(data);
 
 	$('#example').DataTable().clear();
 	$('#example').DataTable().destroy();

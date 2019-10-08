@@ -4,8 +4,9 @@
     "\\.netlify",
     "\\css",
     "\\img",
+    "\\js",
     "\\json"
   ],
-  "SelectedNode": "\\json\\sectiondata.json",
+  "SelectedNode": "\\js\\340bmap.js",
   "PreviewInSolutionExplorer": false
 }
